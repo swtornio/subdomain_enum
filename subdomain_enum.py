@@ -51,7 +51,7 @@ def main():
     parser.add_argument('--permutations', default='permutations.txt',
         help='File containing permutations')
     parser.add_argument('--domains', default='domains.txt',
-        help='File containing permutations')
+        help='File containing domains')
     parser.add_argument('--outfile', help='Output file')
 
     args = parser.parse_args()

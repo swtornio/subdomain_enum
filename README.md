@@ -15,7 +15,7 @@ optional arguments:
   --base BASE           Base word
   --permutations PERMUTATIONS
                         File containing permutations
-  --domains DOMAINS     File containing permutations
+  --domains DOMAINS     File containing domains
   --outfile OUTFILE     Output file
 
   (.env) danny@Dannys-MBP subdomain_enum % python ./subdomain_enum.py --base test --outfile out.txt
