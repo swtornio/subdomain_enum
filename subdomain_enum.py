@@ -3,6 +3,8 @@
 import argparse
 import dns.resolver
 
+DNS_SERVERS = ['8.8.8.8', '9.9.9.9', '4.2.2.1']
+
 # ANSI codes for some pretty terminal output
 class bcolors:
     OK = '\033[92m'  # GREEN
@@ -27,7 +29,7 @@ def permute(base, domain, permutations):
 def resolve(name):
     global domains_exist
     resolver = dns.resolver.Resolver(configure=False)
-    resolver.nameservers = ['8.8.8.8']
+    resolver.nameservers = DNS_SERVERS
     try:
         answer = resolver.resolve(name, 'A')
         print(f"{bcolors.OK}{name}{bcolors.RESET} exists")
@@ -65,6 +67,7 @@ def main():
         domains = f.read().splitlines()
 
     for domain in domains:
+        print(f"Enumerating {domain}...")
         candidates = permute(base, domain, permutations)
         candidates.append(f"{base}.{domain}")
         for candidate in candidates:
