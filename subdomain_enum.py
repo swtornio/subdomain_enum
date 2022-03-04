@@ -33,8 +33,6 @@ def resolve(name):
         print(f"{bcolors.OK}{name}{bcolors.RESET} exists")
         # We don't care what the IP is, just that the name exists
         domains_exist.append(name)
-    # except dns.resolver.NXDOMAIN as e:
-        # pass
     except dns.resolver.NoAnswer as e:
         # This exception means there's some kind of record, but no IP was returned
         print(f"Exists but no IP for {bcolors.WARNING}{name}{bcolors.RESET}")
