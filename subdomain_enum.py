@@ -1,11 +1,4 @@
-# Originally written to enumerate Azure cloud domains, although the domains
-# and permutations arguments could be applied to any dns enumeration
 
-# Based on MicroBurst from NetSPI - https://github.com/netspi/microburst
-# Swiped the permutations.txt and the list of subdomains from there
-
-# Wrote my own because the ps1 file was super slow in my Windows VM and 
-# it's quicker for me to write python than to understand powershell
 
 import argparse
 import dns.resolver
@@ -79,7 +72,7 @@ def main():
         for candidate in candidates:
             resolve(candidate)
 
-    with open(outfile, "a") as f:
+    with open(outfile, "w") as f:
         for domain in domains_exist:
             f.write(f"{domain}\n")
 
