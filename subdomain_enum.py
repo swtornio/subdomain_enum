@@ -3,7 +3,7 @@
 import argparse
 import dns.resolver
 
-DNS_SERVERS = ['8.8.8.8', '9.9.9.9', '4.2.2.1']
+DNS_SERVERS = ['8.8.8.8', '9.9.9.9', '1.1.1.1']
 
 # ANSI codes for some pretty terminal output
 class bcolors:
